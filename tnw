@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+"$@"
+
+exit_status=$?
+
+terminal-notifier \
+  -message "${1} command exits with status ${exit_status}" \
+  -title "End command" \
+  -sound "default"
+
+exit ${exit_status}
